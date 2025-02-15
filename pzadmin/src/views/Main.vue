@@ -1,11 +1,16 @@
 <template>
     <div class="common-layout">
         <el-container>
-            <!-- <el-aside w1idth="200px">Aside</el-aside> -->
-             <Aside></Aside>
+            <el-aside>
+                <Aside/>
+            </el-aside>
             <el-container>
-                <el-header>Header</el-header>
-                <el-main>Main</el-main>
+                <el-header>
+                    <Header />
+                </el-header>
+                <el-main>
+                    <router-view></router-view>
+                </el-main>
             </el-container>
         </el-container>
     </div>
@@ -13,6 +18,7 @@
 
 <script setup>
 import Aside from '../components/aside.vue';
+import Header from '../components/navHeader.vue';
 </script>
 
 <style lang="less" scoped>
@@ -22,4 +28,12 @@ import Aside from '../components/aside.vue';
         height: 100%;
     }
 }
+.el-aside {
+    transition: width 0.15s;
+  -webkit-transition: width 0.15s;
+  -moz-transition: width 0.15s;
+  -webkit-transition: width 0.15s;
+  -o-transition: width 0.15s;
+  width: auto;
+  }
 </style>

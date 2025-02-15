@@ -43,10 +43,20 @@ const routes = [
             {
                 path: 'vppz',
                 meta: {
-                    id:'3',name: 'DIDI陪诊', icon:'BellFilled'
+                    id:'3',name: 'DocPal陪诊', icon:'BellFilled'
                 },
                 children: [
-                    
+                {
+                    path: '',
+                    alias: ['staff'],
+                    meta: { id: '1', name: '陪护管理', icon: 'Checked', path: '/vppz/staff', describe: '陪护师可以进行创建和修改，设置对应生效状态控制C端选择' },
+                    component: ()=>import('../views/vppz/staff/index.vue')
+                },
+                {
+                    path: 'order',
+                    meta: { id: '2', name: '订单管理', icon: 'List', path: '/vppz/order', describe: 'C端下单后可以查看所有订单状态，已支付的订单可以完成陪护状态修改' },
+                    component: ()=>import('../views/vppz/order/index.vue')
+                }
                 ]
             }
             
